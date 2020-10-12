@@ -8,3 +8,5 @@ If you have any ideas or suggestions on how I could make it more accessible for 
 
 
 Make sure you are signed up for the event or your progress won't count! https://hacktoberfest.digitalocean.com/
+
+Also, make sure you check out their resources page if you are unfamiliar with the event: https://hacktoberfest.digitalocean.com/details
