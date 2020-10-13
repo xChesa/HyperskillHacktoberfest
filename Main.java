@@ -10,7 +10,7 @@ public class Main {
         do {
             System.out.println("Please enter the number of a selection:\n" +
                     "1. Calculator\n" +
-                    "2. Word details\n" +
+                    "2. Word Functions\n" +
                     "0. Exit\n"); // Add any new selections here!
 
             try {
@@ -51,7 +51,7 @@ public class Main {
 
     /** All kinds of functions to be implemented on a user input string.
      * How long is the word?
-     * How many duplicate letters in the word?
+     * How many of x letter in the word?
      * Is it a palindrome (the same backwards)?
      * Please add more! :) */
     private static void wordDetails() {
@@ -80,14 +80,14 @@ public class Main {
 
     private static String displayWordMenu() {
         System.out.println("\nPlease enter a choice:\n" +
-                "1: the length of the word\n" +
+                "1: The length of the word\n" +
                 "2: Count appearance of letter\n" +
                 "3: Is it a palindrome?\n" +
                 "4: Display the ASCII for each letter\n" +
                 "0: Exit");
                 /* Please add any others */
 
-        return scanner.nextLine().trim().toLowerCase();
+        return scanner.nextLine().trim();
     }
 
     private static long countChars(String word) {
