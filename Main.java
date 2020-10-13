@@ -1,4 +1,7 @@
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -31,7 +34,7 @@ public class Main {
                 calculator();
                 break;
             case 2:
-                wordDetails();
+                wordFunctions();
                 break;
             /*
             Make sure to add new functions to the selection manager, example above!
@@ -54,7 +57,7 @@ public class Main {
      * How many of x letter in the word?
      * Is it a palindrome (the same backwards)?
      * Please add more! :) */
-    private static void wordDetails() {
+    private static void wordFunctions() {
         System.out.println("Enter the word you would like details about:");
         String word = scanner.nextLine().trim().toLowerCase();
         String choice = displayWordMenu();
@@ -73,6 +76,9 @@ public class Main {
                 case 4: // display the ASCII for each character in word
                     displayASCII(word);
                     break;
+                case 5: // natural order sort characters
+                    System.out.printf("In alphabetical order: %s\n", naturalOrderSort(word));
+                    break;
             }
             choice = displayWordMenu();
         }
@@ -84,6 +90,7 @@ public class Main {
                 "2: Count appearance of letter\n" +
                 "3: Is it a palindrome?\n" +
                 "4: Display the ASCII for each letter\n" +
+                "5: Display word in alphabetical order\n" +
                 "0: Exit");
                 /* Please add any others */
 
@@ -104,6 +111,15 @@ public class Main {
 
     private static void displayASCII(String word) {
         word.chars().forEach(c -> System.out.printf("Letter: %s ASCII: %d\n", (char) c, c));
+    }
+
+    private static String naturalOrderSort(String word) {
+        return word.chars()
+                .mapToObj(e -> (char) e)
+                .sorted()
+                .collect(Collectors.toList())
+                .toString()
+                .replaceAll("[\\[,\\] ]", "");
     }
 
 }
